@@ -145,6 +145,9 @@ headerprincipal($data);
         </section>
         <!-- FIN: Galería de tarjetas -->
 
+<script>
+  window.pageVersion = '<?php echo isset($data["page_version"]) ? $data["page_version"] : "1"; ?>';
+</script>
 <?php
 
 footerprincipal($data);

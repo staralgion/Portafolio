@@ -4,39 +4,40 @@ document.addEventListener('DOMContentLoaded', function() {
   const items = document.querySelectorAll('.galeria-item');
 
   // Datos de proyectos: image puede ser string (una imagen) o array (varias)
+  const version = window.pageVersion || '1';
   const projectData = {
     'web-1': {
       title: 'E-Commerce Moderno',
       image: [
-        baseurl + '/Assets/archivosprincipal/img/1.webp',
-        baseurl + '/Assets/archivosprincipal/img/2.webp',
-        baseurl + '/Assets/archivosprincipal/img/3.webp',
-        baseurl + '/Assets/archivosprincipal/img/4.webp',
-        baseurl + '/Assets/archivosprincipal/img/5.webp',
-        baseurl + '/Assets/archivosprincipal/img/6.webp'
+        baseurl + '/Assets/archivosprincipal/img/1.webp?v=' + version,
+        baseurl + '/Assets/archivosprincipal/img/2.webp?v=' + version,
+        baseurl + '/Assets/archivosprincipal/img/3.webp?v=' + version,
+        baseurl + '/Assets/archivosprincipal/img/4.webp?v=' + version,
+        baseurl + '/Assets/archivosprincipal/img/5.webp?v=' + version,
+        baseurl + '/Assets/archivosprincipal/img/6.webp?v=' + version
       ]
     },
     'mobile-1': {
       title: 'App de Fitness',
-           image: [
-         baseurl + '/Assets/archivosprincipal/img/7.webp',
-        baseurl + '/Assets/archivosprincipal/img/8.webp',
-        baseurl + '/Assets/archivosprincipal/img/9.webp',
-        baseurl + '/Assets/archivosprincipal/img/10.webp',
-        baseurl + '/Assets/archivosprincipal/img/11.webp',
-        baseurl + '/Assets/archivosprincipal/img/12.webp',
-        baseurl + '/Assets/archivosprincipal/img/13.webp'
+      image: [
+        baseurl + '/Assets/archivosprincipal/img/7.webp?v=' + version,
+        baseurl + '/Assets/archivosprincipal/img/8.webp?v=' + version,
+        baseurl + '/Assets/archivosprincipal/img/9.webp?v=' + version,
+        baseurl + '/Assets/archivosprincipal/img/10.webp?v=' + version,
+        baseurl + '/Assets/archivosprincipal/img/11.webp?v=' + version,
+        baseurl + '/Assets/archivosprincipal/img/12.webp?v=' + version,
+        baseurl + '/Assets/archivosprincipal/img/13.webp?v=' + version
       ]
     },
     'ui-1': {
       title: 'Diseño de Sistema UI',
       image: [
-         baseurl + '/Assets/archivosprincipal/img/14.webp',
-         baseurl + '/Assets/archivosprincipal/img/14a.webp',
-        baseurl + '/Assets/archivosprincipal/img/15.webp',
-        baseurl + '/Assets/archivosprincipal/img/16.webp',
-        baseurl + '/Assets/archivosprincipal/img/17.webp',
-        baseurl + '/Assets/archivosprincipal/img/18.webp',
+        baseurl + '/Assets/archivosprincipal/img/14.webp?v=' + version,
+        baseurl + '/Assets/archivosprincipal/img/14a.webp?v=' + version,
+        baseurl + '/Assets/archivosprincipal/img/15.webp?v=' + version,
+        baseurl + '/Assets/archivosprincipal/img/16.webp?v=' + version,
+        baseurl + '/Assets/archivosprincipal/img/17.webp?v=' + version,
+        baseurl + '/Assets/archivosprincipal/img/18.webp?v=' + version
       ]
     }
   };
