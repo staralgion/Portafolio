@@ -19,7 +19,7 @@ headerprincipal($data);
             ></video>
               <!-- Imagen optimizada solo para móviles -->
               <img
-                src="Assets/archivosprincipal/img/fondo.1.webp"
+                src="Assets/archivosprincipal/img/fondo.webp"
                 alt="Fondo hero móvil"
                 class="thq-hero-video-bg-elm d-block d-md-none"
                 style="width:100%;height:auto;object-fit:cover;"
