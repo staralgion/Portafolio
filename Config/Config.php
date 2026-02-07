@@ -2,18 +2,18 @@
    
    date_default_timezone_set('America/La_Paz');
 
-    // const BASE_URL = "https://nathanpublicidad.com/Portafolio";
-    // const DB_HOST = "localhost";
-    // const DB_NAME = "dbatcliente";
-    // const DB_USER = "root";
-    // const DB_PASSWORD = "";
-
-   
-    const BASE_URL = "http://localhost/Portafolio";
+    const BASE_URL = "https://nathanpublicidad.com/Portafolio";
     const DB_HOST = "localhost";
     const DB_NAME = "dbatcliente";
     const DB_USER = "root";
     const DB_PASSWORD = "";
+
+   
+    // const BASE_URL = "http://localhost/Portafolio";
+    // const DB_HOST = "localhost";
+    // const DB_NAME = "dbatcliente";
+    // const DB_USER = "root";
+    // const DB_PASSWORD = "";
 
     const ENCRYPTION = "Fh4@eG#2o$";
     const IV = "HjLpQr";
