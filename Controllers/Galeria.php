@@ -13,6 +13,7 @@ class Galeria extends Controllers
         $data['page_tag'] = "Galería";
         $data['page_title'] = "Galería de Imágenes";
         $data['page_name'] = "galeria";
+        $data['page_version'] = "1";
         // $data['page_js'] = "functiongaleria.js";
 
         $this->views->getview($this, "galeria", $data);
