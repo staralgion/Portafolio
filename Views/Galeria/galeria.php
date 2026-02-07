@@ -17,17 +17,13 @@ headerprincipal($data);
               preload="none"
               class="thq-hero-video-bg-elm d-none d-md-block"
             ></video>
-            <!-- Video optimizado solo para móviles -->
-            <video
-              src="Assets/archivosprincipal/video/fondo.webm"
-              loop="true"
-              muted="true"
-    
-              autoplay="true"
-              playsinline
-              preload="none"
-              class="thq-hero-video-bg-elm d-block d-md-none"
-            ></video>
+              <!-- Imagen optimizada solo para móviles -->
+              <img
+                src="Assets/archivosprincipal/img/fondo.webp"
+                alt="Fondo hero móvil"
+                class="thq-hero-video-bg-elm d-block d-md-none"
+                style="width:100%;height:auto;object-fit:cover;"
+              />
             <div class="thq-hero-neon-wave-container-elm">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
