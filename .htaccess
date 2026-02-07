@@ -1,7 +1,10 @@
 <IfModule mod_expires.c>
   ExpiresActive On
-  ExpiresDefault "access plus 0 seconds"
+  ExpiresByType image/webp "access plus 0 seconds"
+  ExpiresByType image/jpeg "access plus 0 seconds"
+  ExpiresByType image/png "access plus 0 seconds"
 </IfModule>
+
 Options All -Indexes
 RewriteEngine On
 
