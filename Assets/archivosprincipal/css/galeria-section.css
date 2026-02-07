@@ -1,0 +1,147 @@
+/* ============================================
+   GALERIA-SECTION.CSS - Estilos de la sección galería
+   ============================================ */
+
+.galeria-added-section {
+  background: var(--color-surface);
+  padding: 48px 0;
+  margin: 0;
+}
+
+/* Cards de galería */
+.galeria-card-inline {
+  background: linear-gradient(135deg, rgba(13, 13, 13, 0.8) 0%, rgba(0, 20, 40, 0.6) 50%, rgba(13, 13, 13, 0.8) 100%);
+  border: 1px solid rgba(0, 102, 255, 0.3);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform .28s ease, box-shadow .28s ease;
+  position: relative;
+  background-image: 
+    radial-gradient(circle at 100% 0%, rgba(0, 102, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 0% 100%, rgba(0, 188, 208, 0.08) 0%, transparent 50%);
+  background-blend-mode: overlay;
+}
+
+.galeria-card-inline:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(0, 102, 255, 0.16), 0 6px 18px rgba(0, 0, 0, 0.4), inset 0 0 20px rgba(0, 102, 255, 0.05);
+}
+
+.galeria-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.galeria-card-body {
+  padding: 1rem;
+}
+
+.galeria-card-body h5 {
+  font-family: var(--font-heading);
+  color: var(--color-white);
+  margin-bottom: 0.5rem;
+}
+
+.galeria-card-body p {
+  color: var(--color-on-surface-secondary);
+  margin-bottom: 0.75rem;
+}
+
+/* Badges */
+.galeria-badges {
+  gap: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.galeria-badges .badge.bg-primary {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  color: var(--color-white) !important;
+  border: none;
+  box-shadow: 0 8px 24px rgba(0, 102, 255, 0.12);
+}
+
+.galeria-badges .badge.bg-secondary {
+  background: transparent;
+  color: var(--color-on-surface) !important;
+  border: 1px solid var(--color-border);
+}
+
+/* Botones de filtro */
+.btn-filter {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.04em;
+  transition: all 0.28s ease;
+}
+
+.btn-filter.active {
+  box-shadow: 0 8px 24px rgba(0, 102, 255, 0.2);
+}
+
+.btn-outline-light.btn-filter {
+  border-color: var(--color-border);
+  color: var(--color-on-surface-secondary);
+}
+
+.btn-outline-light.btn-filter:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background-color: rgba(0, 102, 255, 0.08);
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  .galeria-added-section {
+    padding: 32px 0;
+  }
+
+  .galeria-img {
+    height: 180px;
+  }
+
+  .galeria-card-body {
+    padding: 0.875rem;
+  }
+
+  .btn-filter {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+@media (max-width: 479px) {
+  .galeria-added-section {
+    padding: 24px 0;
+  }
+
+  .galeria-img {
+    height: 160px;
+  }
+
+  .galeria-card-body h5 {
+    font-size: 1rem;
+  }
+
+  .galeria-card-body p {
+    font-size: 0.85rem;
+  }
+}
+
+/* Modal preview adjustments (moved from inline styles) */
+.galeria-modal-dialog {
+  max-width: 700px;
+}
+
+.galeria-modal-body {
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.galeria-modal-image {
+  display: block;
+  border-radius: 8px;
+}

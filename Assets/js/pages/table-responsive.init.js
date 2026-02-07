@@ -1,0 +1,17 @@
+/*
+Template Name: Lexa - Admin & Dashboard Template
+Author: Themesdesign
+Website: https://Themesdesign.com/
+Contact: Themesdesign@gmail.com
+File: Table responsive
+*/
+
+$(function() {
+    $('.table-responsive').responsiveTable({
+        addDisplayAllBtn: 'btn btn-secondary',
+        mainContainer:window,i18n:{focus:"Enfocar",display:"Mostrar",displayAll:"Mostrar todo"},
+        addFocusBtn:false
+    });
+
+    $('.btn-toolbar [data-toggle=dropdown]').attr('data-bs-toggle', "dropdown");
+});

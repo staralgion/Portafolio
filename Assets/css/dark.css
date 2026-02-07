@@ -1,0 +1,12 @@
+:root
+{
+  --bs-tertiary-bg:#30384b!important;
+}
+
+div.dt-button-collection{
+    background-color: #2a3142 !important;
+}
+
+.tox .tox-statusbar__resize-handle svg{
+  fill: rgb(255, 255, 255) !important;
+}

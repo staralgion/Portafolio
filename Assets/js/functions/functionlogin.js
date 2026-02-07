@@ -1,0 +1,245 @@
+document.addEventListener("DOMContentLoaded", function () {
+  const redirectUrl = getCookie('redirectUrl');
+
+  if (document.querySelector("#formregister")) {
+
+    var forminsert = document.querySelector("#formregister");
+    forminsert.onsubmit = function (e) {
+        e.preventDefault();
+
+        var nombreValue = document.getElementById('txtnombre').value.trim();
+        var apellidoValue = document.getElementById('txtapellido').value.trim();
+        var correoValue = document.getElementById('txtemailregister').value.trim();
+      
+        var regex = /^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ\s]+$/;
+        if (!regex.test(nombreValue) || !regex.test(apellidoValue)) {
+            Swal.fire("Error", "Por favor, ingrese solo texto válido en los campos de nombre y apellido", "error");
+            return; // Detener el envío del formulario si la validación falla
+        }
+     
+        var emailRegex = /^[^\s@]+@gmail+.com$/;
+        // Verificar si el valor del correo cumple con el formato de correo electrónico
+        if (!emailRegex.test(correoValue)) {
+            Swal.fire("Error", "Por favor, ingrese una dirección de correo electrónico de Gmail válida", "error");
+            return; // Detener el envío del formulario si la validación falla
+        }
+
+        var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+        var ajaxUrl = baseurl + '/Login/setusuario';
+        var formdata = new FormData(forminsert);
+        request.open("POST", ajaxUrl, true);
+        request.send(formdata);
+        request.onreadystatechange = function () {
+            if (request.readyState == 4 && request.status == 200) {
+
+                //console.log(request.responseText);
+               var objdata = parseJSONResponse(request.responseText);
+                //console.log(objdata);
+                if (objdata != null && objdata.status) {
+              
+                    forminsert.reset();
+                  
+
+                    Swal.fire("Administración de Usuarios", objdata.msg, "success");
+                  
+           
+
+                } else {
+                 Swal.fire("Error", "Acceso denegado", "error").then(() => {
+                        location.reload();
+                    });
+
+
+                }
+            }
+        }
+    }
+
+  }
+
+
+  if (document.querySelector("#formlogin")) {
+    let formlogin = document.querySelector("#formlogin");
+    formlogin.onsubmit = function (e) {
+      e.preventDefault();
+
+      let stremail = document.querySelector("#txtemail").value;
+      let strpasswod = document.querySelector("#txtpassword").value;
+
+      if (stremail == "" || strpasswod == "") {
+        Swal.fire("Por favor", "Ingresa tu correo y contraseña", "error");
+        return false;
+      } else {
+        var request = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+        var ajaxUrl = baseurl + "/Login/loginuser";
+        var formdata = new FormData(formlogin);
+
+        request.open("POST", ajaxUrl, true);
+
+        request.send(formdata);
+        //console.log(request);
+
+        request.onreadystatechange = function () {
+          if (request.readyState != 4) return;
+          if (request.status == 200) {
+            var objdata = parseJSONResponse(request.responseText);
+            if (objdata != null && objdata.status) {
+              if (redirectUrl) {
+
+                window.location.href = decodeURIComponent(redirectUrl);
+              } else {
+                window.location = baseurl + "/Perfil";
+              }
+            } else {
+              Swal.fire("Error", objdata.msg, "error");
+              document.querySelector("#txtpassword").value = "";
+            }
+          } else {
+            Swal.fire("Error", "Error en el proceso", "error");
+          }
+        };
+      }
+    };
+  }
+
+  if (document.querySelector('#formresetpassword')) {
+    let formreset = document.querySelector('#formresetpassword');
+    formreset.onsubmit = function (e) {
+      e.preventDefault();
+      let stremail = document.querySelector('#txtemailreset').value;
+      if (stremail == '') {
+        Swal.fire("Por favor", "Escribe tu correo electrónico", "error");
+        return false;
+      } else {
+        var request = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+        var ajaxUrl = baseurl + "/Login/resetpassword";
+        var formdata = new FormData(formreset);
+
+        request.open("POST", ajaxUrl, true);
+
+        request.send(formdata);
+        request.onreadystatechange = function () {
+          // console.log(request);
+          if (request.readyState != 4) return;
+          if (request.status == 200) {
+            var objdata = parseJSONResponse(request.responseText);
+            if (objdata != null && objdata.status) {
+
+              Swal.fire({
+                title: "Atencion",
+                text: objdata.msg,
+                type: "success",
+                showCancelButton: false,
+                confirmButtonText: "Aceptar",
+
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  window.location = baseurl;
+                }
+              });
+
+
+            } else {
+              Swal.fire("Atencion", objdata.msg, "error");
+            }
+
+          } else {
+            Swal.fire("Atencion", "error en el proceso", "error");
+          }
+          return false;
+
+        }
+
+      }
+    }
+  }
+
+
+  if (document.querySelector('#formcambiarpass')) {
+    let formcambio = document.querySelector('#formcambiarpass');
+    formcambio.onsubmit = function (e) {
+      e.preventDefault();
+
+      let strpassword = document.querySelector('#txtpasswordcam').value;
+      let strpasswordconfirm = document.querySelector('#txtpasswordconfirm').value;
+      let iduser = document.querySelector('#iduser').value;
+      let strtoken = document.querySelector('#txttoken').value;
+
+      //libreria
+      var passwordStrength = zxcvbn(strpassword);
+      if (passwordStrength.score < 3) {
+        Swal.fire(
+          "Contraseña débil",
+          "Por favor, elija una contraseña más segura.",
+          "error"
+        );
+        return false;
+      }
+
+      var regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{12,}$/;
+      if (!regex.test(strpassword)) {
+        Swal.fire(
+          "Contraseña inválida",
+          "La contraseña debe tener al menos 12 caracteres, incluyendo al menos una letra mayúscula, una letra minúscula, un número y un carácter especial.",
+          "error"
+        );
+        return false;
+      }
+
+
+      if (strpassword == "" || strpasswordconfirm == "") {
+        Swal.fire("Por favor", "Escribe la nueva contraseña.", "error");
+        return false;
+      } else {
+        if (strpassword.lenght < 5) {
+          Swal.fire("Por favor", "La contraseña debe tener como minimo 5 caracteres.", "info");
+          return false;
+        }
+        if (strpassword != strpasswordconfirm) {
+          Swal.fire("Atencion", "Las contraseñas no son iguales.", "info");
+          return false;
+        }
+        var request = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+        var ajaxUrl = baseurl + "/Login/setpassword";
+        var formdata = new FormData(formcambio);
+        request.open("POST", ajaxUrl, true);
+        request.send(formdata);
+        request.onreadystatechange = function () {
+          if (request.readyState != 4) return;
+          if (request.status == 200) {
+            var objdata = parseJSONResponse(request.responseText);
+            if (objdata != null && objdata.status) {
+              Swal.fire({
+                title: "Atencion",
+                text: objdata.msg,
+                type: "success",
+
+                confirmButtonText: "Iniciar Sesion",
+
+                closeOnConfirm: false,
+
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  window.location = baseurl + '/Login';
+                }
+              });
+              ;
+            } else {
+              Swal.fire("Atencion", objdata.msg, "error");
+            }
+          } else {
+            Swal.fire("Atencion", "Error en el proceso", "error");
+          }
+        }
+      }
+    }
+  }
+
+
+});
+
+
+function getCookie(name) {
+  const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+  if (match) return match[2];
+}
