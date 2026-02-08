@@ -54,7 +54,7 @@ headerprincipal($data);
                 class="hero-subtitle projects-hero-subtitle1 projects-hero-neon-description1"
               >
                 Experiencias web modernas, funcionales y visualmente
-                impactantes. Diseño oscuro con acentos azul neón que evocan
+                impactantes. Diseño que evocan
                 tecnología de alto nivel.
               </p>
               <div class="projects-hero-neon-actions1">
@@ -95,16 +95,16 @@ headerprincipal($data);
                   <div class="showcase-card-media">
                     <img
                       alt="Quantum Dashboard"
-                      src="https://images.pexels.com/photos/32026177/pexels-photo-32026177.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=400"
+                      src="Assets/archivosprincipal/img/2.webp?v=<?php echo isset($data['page_version']) ? $data['page_version'] : '1'; ?>"
+                
                     />
                   </div>
                   <div class="showcase-card-content">
                     <h3 class="showcase-title section-title">
-                      Quantum Dashboard
+                      SmartSupport
                     </h3>
                     <p class="section-content">
-                      Interfaz de análisis de datos con visualización en tiempo
-                      real y estética de comando futurista.
+                      Plataforma de atención al cliente impulsada por IA para clasificación y priorización automática.
                     </p>
                   </div>
                 </div>
@@ -112,16 +112,16 @@ headerprincipal($data);
                   <div class="showcase-card-media">
                     <img
                       alt="Nebula E-commerce"
-                      src="https://images.pexels.com/photos/27141314/pexels-photo-27141314.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=400"
+                       src="Assets/archivosprincipal/img/7.webp?v=<?php echo isset($data['page_version']) ? $data['page_version'] : '1'; ?>"
+                
                     />
                   </div>
                   <div class="showcase-card-content">
                     <h3 class="showcase-title section-title">
-                      Nebula E-commerce
+                      Cursos en Línea
                     </h3>
                     <p class="section-content">
-                      Tienda virtual minimalista optimizada para conversiones con
-                      micro-interacciones fluidas.
+                      Plataforma educativa digital para creación, gestión y consumo de cursos en línea.
                     </p>
                   </div>
                 </div>
@@ -129,14 +129,13 @@ headerprincipal($data);
                   <div class="showcase-card-media">
                     <img
                       alt="Aether Portfolio"
-                      src="https://images.pexels.com/photos/27141316/pexels-photo-27141316.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=400"
-                    />
+                   src="Assets/archivosprincipal/img/17.webp?v=<?php echo isset($data['page_version']) ? $data['page_version'] : '1'; ?>"
+                />
                   </div>
                   <div class="showcase-card-content">
-                    <h3 class="showcase-title section-title">Aether Portfolio</h3>
+                    <h3 class="showcase-title section-title">Comercio Electrónico</h3>
                     <p class="section-content">
-                      Experiencia inmersiva para artistas digitales con scroll
-                      parallax y efectos de partículas.
+                      Tienda virtual optimizada para conversiones con experiencia de compra fluida.
                     </p>
                   </div>
                 </div>

@@ -41,6 +41,7 @@
 
 <body>
 
+  <?php $isHome = isset($data['page_name']) && $data['page_name'] === 'home'; ?>
   <div>
 
 
@@ -66,28 +67,28 @@
                 <div class="navigation-desktop-menu">
                   <ul class="navigation-links">
                     <li>
-                      <a href="index.html">
+                      <a href="<?= base_url() ?>">
                         <div class="navigation-link">
                           <span>Inicio</span>
                         </div>
                       </a>
                     </li>
                     <li>
-                      <a href="#featured">
+                      <a href="<?= $isHome ? '#featured' : base_url().'#featured' ?>">
                         <div class="navigation-link">
                           <span>Destacados</span>
                         </div>
                       </a>
                     </li>
                     <li>
-                      <a href="#ciclo">
+                      <a href="<?= $isHome ? '#ciclo' : base_url().'#ciclo' ?>">
                         <div class="navigation-link">
                           <span>Ciclo</span>
                         </div>
                       </a>
                     </li>
                     <li>
-                      <a href="#propuesta">
+                      <a href="<?= $isHome ? '#propuesta' : base_url().'#propuesta' ?>">
                         <div class="navigation-link">
                           <span>Contactos</span>
                         </div>
@@ -95,7 +96,7 @@
                     </li>
                   </ul>
                   <div class="navigation-cta-wrapper">
-                    <a href="galeria.html">
+                    <a href="<?= base_url() ?>/Galeria">
                       <div class="navigation-cta btn-sm btn btn-primary">
                         <span>Galeria</span>
                         <i class="fas fa-arrow-right"></i>
@@ -136,28 +137,28 @@
             <div class="navigation-mobile-content">
               <ul class="navigation-mobile-links">
                 <li>
-                  <a href="index.html">
+                  <a href="<?= base_url() ?>">
                     <div class="navigation-mobile-link">
                       <span>Inicio</span>
                     </div>
                   </a>
                 </li>
                 <li>
-                  <a href="#featured">
+                  <a href="<?= $isHome ? '#featured' : base_url().'#featured' ?>">
                     <div class="navigation-mobile-link">
                       <span>Destacados</span>
                     </div>
                   </a>
                 </li>
                 <li>
-                  <a href="#ciclo">
+                  <a href="<?= $isHome ? '#ciclo' : base_url().'#ciclo' ?>">
                     <div class="navigation-mobile-link">
                       <span>Ciclo</span>
                     </div>
                   </a>
                 </li>
                 <li>
-                  <a href="#propuesta">
+                  <a href="<?= $isHome ? '#propuesta' : base_url().'#propuesta' ?>">
                     <div class="navigation-mobile-link">
                       <span>Contactos</span>
                     </div>
