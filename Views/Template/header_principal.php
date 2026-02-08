@@ -57,7 +57,7 @@
                       <i class="fas fa-chevron-right"></i>
                     </div>
                     <span class="section-title navigation-brand-text">
-                      NeonForge
+                      Punto Digital
                     </span>
                   </div>
                 </a>
@@ -122,7 +122,7 @@
                     <i class="fas fa-chevron-right"></i>
                   </div>
                   <span class="section-title navigation-brand-text">
-                    NeonForge
+                    Punto Digital
                   </span>
                 </div>
               </a>

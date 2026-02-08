@@ -78,7 +78,7 @@
             <div class="footer-brand-column">
               <div class="footer-logo-wrapper">
                 <i class="fas fa-chevron-right footer-brand-icon"></i>
-                <span class="footer-brand-name">NeonForge</span>
+                <span class="footer-brand-name">Punto Digital</span>
               </div>
               <p class="footer-brand-description section-content">
                 Experiencias web modernas, funcionales y visualmente

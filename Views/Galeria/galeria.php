@@ -50,7 +50,7 @@ headerprincipal($data);
               <h1
                 class="projects-projects-hero-title1 projects-hero-title2 hero-title projects-hero-neon-glow1"
               >
-                NeonForge
+                Punto Digital
               </h1>
               <p
                 class="hero-subtitle projects-hero-subtitle1 projects-hero-neon-description1"

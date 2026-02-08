@@ -1,3 +1,12 @@
+/* Evita superposición de video e imagen en el hero */
+@media (max-width: 767.98px) {
+  .thq-hero-video-bg-elm.d-none.d-md-block { display: none !important; }
+  .thq-hero-video-bg-elm.d-block.d-md-none { display: block !important; }
+}
+@media (min-width: 768px) {
+  .thq-hero-video-bg-elm.d-none.d-md-block { display: block !important; }
+  .thq-hero-video-bg-elm.d-block.d-md-none { display: none !important; }
+}
 .explorar-galeria-btn {
   box-shadow: 0 0 16px 0 #0066ff !important;
 }
