@@ -2130,3 +2130,7 @@
   top: 50% !important;
   bottom: 50% !important;
 }
+
+a {
+  text-decoration: none !important;
+}
