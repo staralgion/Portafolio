@@ -9,7 +9,7 @@
   <meta property="twitter:card" content="summary_large_image" />
 
 
-
+<!-- $ for i in *.jpg; do   ffmpeg -i "$i" -q:v 100 "${i%.*}.webp"; done -->
   <!-- Agrupación de todos los estilos principales -->
   <link rel="stylesheet" href="Assets/archivosprincipal/css/reset.css?v=<?php echo isset($data['page_version']) ? $data['page_version'] : '1'; ?>" />
   <link rel="stylesheet" href="Assets/archivosprincipal/css/style.css?v=<?php echo isset($data['page_version']) ? $data['page_version'] : '1'; ?>" />

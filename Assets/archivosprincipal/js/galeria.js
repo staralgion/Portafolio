@@ -10,11 +10,14 @@ document.addEventListener('DOMContentLoaded', function() {
       title: 'E-Commerce Moderno',
       image: [
         baseurl + '/Assets/archivosprincipal/img/1.webp?v=' + version,
+        baseurl + '/Assets/archivosprincipal/img/1a.webp?v=' + version,
+        baseurl + '/Assets/archivosprincipal/img/1b.webp?v=' + version,
         baseurl + '/Assets/archivosprincipal/img/2.webp?v=' + version,
         baseurl + '/Assets/archivosprincipal/img/3.webp?v=' + version,
         baseurl + '/Assets/archivosprincipal/img/4.webp?v=' + version,
         baseurl + '/Assets/archivosprincipal/img/5.webp?v=' + version,
-        baseurl + '/Assets/archivosprincipal/img/6.webp?v=' + version
+        baseurl + '/Assets/archivosprincipal/img/6.webp?v=' + version,
+        
       ]
     },
     'mobile-1': {
