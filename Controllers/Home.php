@@ -9,6 +9,7 @@
             $data['page_tag'] = "Home";
             $data['page_title']= "Pagina Principal";
             $data['page_name'] = "home";
+            $data['page_version'] = "2";
             session_start();
             $this->views->getview($this,"home",$data);
             
